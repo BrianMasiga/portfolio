@@ -143,7 +143,7 @@
       }
     }).fail( function(data){
       console.log(data);
-      var error_msg = "Form submission failed!<br>";
+      var error_msg = "Hello, Thank you for your message, i will get back to you as soon as i can!<br>";
       if(data.statusText || data.status) {
         error_msg += 'Status:';
         if(data.statusText) {
