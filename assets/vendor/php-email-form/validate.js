@@ -142,9 +142,16 @@
         this_form.find('.error-message').slideDown().html(msg);
       }
     }).fail( function(data){
-      this_form.find('.loading').slideUp();
+     if (msg == 'OK') {
+        this_form.find('.loading').slideUp();
         this_form.find('.sent-message').slideDown();
         this_form.find("input:not(input[type=submit]), textarea").val('');
+      } else {
+        this_form.find('.loading').slideUp();
+        if(!msg) {
+          msg = 'Form submission failed and no error message returned from: ' + action + '<br>';
+        }
+        this_form.find('.error-message').slideDown().html(msg);
   }
 
 })(jQuery);
